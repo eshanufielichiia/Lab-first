@@ -1,0 +1,90 @@
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 4 - Пора року та назва місяця</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f0f0f0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Завдання 4</h1>
+    <p>В змінній month лежить якесь число з діапазону від 1 до 12.<br>
+    Визначте в яку пору року потрапляє цей місяць (зима, літо, весна, осінь) і яку цей місяць має назву.<br>
+    Число з діапазону отримувати з допомогою модального вікна prompt, результат роботи виводити в модальному вікні alert.</p>
+    
+    <button onclick="getMonthInfo()">Ввести номер місяця</button>
+    
+    <script>
+        function getMonthInfo() {
+            let monthInput = prompt("Введіть число від 1 до 12 (номер місяця):");
+
+            let month = parseInt(monthInput);
+            
+            let season = "";
+            let monthName = "";
+            let isValid = true;
+
+            if (isNaN(month) || month < 1 || month > 12) {
+                alert("Помилка! Введіть коректне число від 1 до 12.");
+                isValid = false;
+            }
+            
+            if (isValid) {
+                switch (month) {
+                    case 1: monthName = "Січень"; break;
+                    case 2: monthName = "Лютий"; break;
+                    case 3: monthName = "Березень"; break;
+                    case 4: monthName = "Квітень"; break;
+                    case 5: monthName = "Травень"; break;
+                    case 6: monthName = "Червень"; break;
+                    case 7: monthName = "Липень"; break;
+                    case 8: monthName = "Серпень"; break;
+                    case 9: monthName = "Вересень"; break;
+                    case 10: monthName = "Жовтень"; break;
+                    case 11: monthName = "Листопад"; break;
+                    case 12: monthName = "Грудень"; break;
+                }
+
+                if (month === 12 || month === 1 || month === 2) {
+                    season = "зима";
+                } else if (month >= 3 && month <= 5) {
+                    season = "весна";
+                } else if (month >= 6 && month <= 8) {
+                    season = "літо";
+                } else {
+                    season = "осінь";
+                }
+
+                alert("Місяць " + monthName + " - це " + season);
+            }
+        }
+
+        console.log("Відкрийте сторінку та натисніть кнопку, щоб ввести номер місяця.");
+    </script>
+</body>
+</html>

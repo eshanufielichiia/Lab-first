@@ -1,0 +1,123 @@
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 6 - Число в день тижня</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f3e5f5;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #9c27b0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #7b1fa2;
+        }
+        .info {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 10px;
+            display: inline-block;
+            font-size: 18px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .days {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Завдання 6</h1>
+    <p>Отримати з модального вікна prompt число від 1 до 7,<br>
+    і вивести в вікні браузера день тижня, якому відповідає задане число.</p>
+    
+    <div class="info">
+        📅 <strong>Відповідність чисел дням тижня:</strong><br>
+        1 - Понеділок &nbsp;|&nbsp;
+        2 - Вівторок &nbsp;|&nbsp;
+        3 - Середа<br>
+        4 - Четвер &nbsp;|&nbsp;
+        5 - П'ятниця &nbsp;|&nbsp;
+        6 - Субота &nbsp;|&nbsp;
+        7 - Неділя
+    </div>
+    <br>
+    <button onclick="getDayOfWeek()">Ввести число (1-7)</button>
+    
+    <div class="days" id="result"></div>
+    
+    <script>
+        function getDayOfWeek() {
+            let dayInput = prompt("Введіть число від 1 до 7:");
+
+            let dayNumber = parseInt(dayInput);
+            
+            let dayName = "";
+            let isValid = true;
+
+            if (isNaN(dayNumber) || dayNumber < 1 || dayNumber > 7) {
+                alert("Помилка! Введіть коректне число від 1 до 7.");
+                isValid = false;
+            }
+            
+            if (isValid) {
+                switch (dayNumber) {
+                    case 1:
+                        dayName = "Понеділок";
+                        break;
+                    case 2:
+                        dayName = "Вівторок";
+                        break;
+                    case 3:
+                        dayName = "Середа";
+                        break;
+                    case 4:
+                        dayName = "Четвер";
+                        break;
+                    case 5:
+                        dayName = "П'ятниця";
+                        break;
+                    case 6:
+                        dayName = "Субота";
+                        break;
+                    case 7:
+                        dayName = "Неділя";
+                        break;
+                    default:
+                        dayName = "Невідомий день";
+                }
+
+                alert("Числу " + dayNumber + " відповідає день тижня: " + dayName);
+
+                let resultDiv = document.getElementById("result");
+                resultDiv.innerHTML = "✅ <strong>Результат:</strong> Числу " + dayNumber + " відповідає <span style='color:#9c27b0; font-size:20px;'>" + dayName + "</span>";
+                resultDiv.style.marginTop = "20px";
+                resultDiv.style.padding = "15px";
+                resultDiv.style.backgroundColor = "#e8f5e9";
+                resultDiv.style.borderRadius = "10px";
+                resultDiv.style.display = "inline-block";
+
+                console.log("Числу " + dayNumber + " відповідає день тижня: " + dayName);
+            } else {
+                let resultDiv = document.getElementById("result");
+                resultDiv.innerHTML = "❌ <strong>Помилка:</strong> Введіть число від 1 до 7!";
+                resultDiv.style.backgroundColor = "#ffebee";
+            }
+        }
+
+        console.log("Відкрийте сторінку та натисніть кнопку, щоб перевести число в день тижня.");
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 5 - Перетворення Цельсій на Фаренгейт</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #e0f7fa;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #f57c00;
+        }
+        .formula {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 10px;
+            display: inline-block;
+            font-size: 18px;
+            font-family: monospace;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Завдання 5</h1>
+    <p>Задати температуру в градусах за Цельсієм.<br>
+    Вивести в alert відповідну температуру в градусах за Фаренгейтом.<br>
+    <strong>Підказка:</strong> розрахунок йде за формулою: <strong>Tf = (9/5) * Tc + 32</strong>,<br>
+    де Tf – температура за Фаренгейтом, Tc – температура за Цельсієм.</p>
+    
+    <div class="formula">
+        📐 Формула: °F = (°C × 9/5) + 32
+    </div>
+    <br>
+    <button onclick="convertToFahrenheit()">Перевести °C → °F</button>
+    
+    <script>
+        function convertToFahrenheit() {
+            let celsiusInput = prompt("Задайте температуру в градусах Цельсія (°C):");
+
+            let celsius = parseFloat(celsiusInput);
+
+            if (isNaN(celsius)) {
+                alert("Помилка! Введіть коректне число (наприклад: 25, 36.6, -10).");
+            } else {
+                let fahrenheit = (9 / 5) * celsius + 32;
+
+                let fahrenheitRounded = fahrenheit.toFixed(2);
+
+                alert(celsius + "°C = " + fahrenheitRounded + "°F");
+
+                console.log(celsius + "°C = " + fahrenheitRounded + "°F");
+            }
+        }
+
+        console.log("Відкрийте сторінку та натисніть кнопку, щоб перевести °C в °F.");
+    </script>
+</body>
+</html>
