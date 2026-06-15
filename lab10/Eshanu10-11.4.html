@@ -1,0 +1,176 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Анкета - Моя майбутня професія</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            padding: 40px;
+        }
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+        h2 {
+            color: #11998e;
+            text-align: center;
+            border-bottom: 3px solid #38ef7d;
+            padding-bottom: 10px;
+        }
+        .form-group {
+            margin: 18px 0;
+        }
+        label {
+            display: inline-block;
+            width: 200px;
+            font-weight: bold;
+        }
+        .inline-label {
+            width: auto;
+            font-weight: normal;
+        }
+        input, select, textarea {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 250px;
+        }
+        .radio-group, .checkbox-group {
+            display: inline-block;
+        }
+        .radio-group label, .checkbox-group label {
+            width: auto;
+            font-weight: normal;
+            margin-right: 20px;
+        }
+        .buttons {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .buttons input {
+            padding: 12px 25px;
+            margin: 0 15px;
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+        }
+        input[type="submit"] {
+            background: #11998e;
+            color: white;
+        }
+        input[type="reset"] {
+            background: #e74c3c;
+            color: white;
+        }
+        hr {
+            margin: 20px 0;
+        }
+        .note {
+            font-size: 12px;
+            color: #999;
+            margin-left: 205px;
+        }
+    </style>
+    <script>
+        function showMessage() {
+            alert("✅ Вашу анкету прийнято!\nДякуємо за участь в опитуванні!");
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>💼 АНКЕТА "МОЯ МАЙБУТНЯ ПРОФЕСІЯ"</h2>
+        <form onsubmit="showMessage(); return false;">
+
+            <div class="form-group">
+                <label> Прізвище:</label>
+                <input type="text" name="surname" size="30" maxlength="40" placeholder="Введіть прізвище">
+            </div>
+
+            <div class="form-group">
+                <label>Ім'я:</label>
+                <input type="text" name="name" size="30" maxlength="40" placeholder="Введіть ім'я">
+            </div>
+
+            <div class="form-group">
+                <label>Пароль:</label>
+                <input type="password" name="password" size="20" maxlength="20" placeholder="Введіть пароль">
+            </div>
+
+            <div class="form-group">
+                <label> Ваша освіта:</label>
+                <select name="education">
+                    <option value="school">Середня освіта</option>
+                    <option value="college">Коледж/Технікум</option>
+                    <option value="bachelor" selected>Бакалавр</option>
+                    <option value="master">Магістр</option>
+                    <option value="phd">Кандидат наук</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label> Ваші сильні якості:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="qualities" value="responsible"> Відповідальність
+                    <input type="checkbox" name="qualities" value="creative"> Креативність
+                    <input type="checkbox" name="qualities" value="team"> Командна робота
+                    <input type="checkbox" name="qualities" value="analytical"> Аналітичне мислення
+                    <input type="checkbox" name="qualities" value="leadership"> Лідерські якості
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label> Бажана сфера:</label>
+                <div class="radio-group">
+                    <input type="radio" name="field" value="it" checked> IT та програмування
+                    <input type="radio" name="field" value="finance"> Фінанси та банківська справа
+                    <input type="radio" name="field" value="marketing"> Маркетинг та реклама
+                    <input type="radio" name="field" value="education"> Освіта та наука
+                    <input type="radio" name="field" value="medicine"> Медицина
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Важливі умови роботи:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="conditions" value="salary"> Висока зарплата
+                    <input type="checkbox" name="conditions" value="remote"> Віддалена робота
+                    <input type="checkbox" name="conditions" value="career"> Кар'єрний ріст
+                    <input type="checkbox" name="conditions" value="flexible"> Гнучкий графік
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Досвід роботи:</label>
+                <div class="radio-group">
+                    <input type="radio" name="experience" value="0"> Немає досвіду
+                    <input type="radio" name="experience" value="1"> До 1 року
+                    <input type="radio" name="experience" value="2"> 1-3 роки
+                    <input type="radio" name="experience" value="3"> Понад 3 роки
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Чому ви обрали цю сферу?:</label><br>
+                <textarea name="reason" rows="5" cols="55" placeholder="Розкажіть, чому вас цікавить саме ця професійна сфера, які ваші цілі та очікування..."></textarea>
+            </div>
+            
+            <hr>
+
+            <div class="buttons">
+                <input type="submit" value="✅ Відправити анкету">
+                <input type="reset" value="🗑️ Очистити форму">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

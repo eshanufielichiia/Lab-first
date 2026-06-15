@@ -1,0 +1,211 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Анкета користувача</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 40px;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+        h2 {
+            color: #1e3c72;
+            text-align: center;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 10px;
+        }
+        .form-group {
+            margin: 18px 0;
+        }
+        label {
+            display: inline-block;
+            width: 200px;
+            font-weight: bold;
+        }
+        .inline-label {
+            width: auto;
+            font-weight: normal;
+        }
+        input, select, textarea {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        input[type="text"], input[type="password"], input[type="email"] {
+            width: 250px;
+        }
+        .radio-group, .checkbox-group {
+            display: inline-block;
+        }
+        .radio-group label, .checkbox-group label {
+            width: auto;
+            font-weight: normal;
+            margin-right: 15px;
+        }
+        .buttons {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .buttons input {
+            padding: 12px 25px;
+            margin: 0 15px;
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+        }
+        input[type="submit"] {
+            background: #1e3c72;
+            color: white;
+        }
+        input[type="reset"] {
+            background: #e74c3c;
+            color: white;
+        }
+        hr {
+            margin: 20px 0;
+        }
+        .note {
+            font-size: 12px;
+            color: #999;
+            margin-left: 205px;
+        }
+        .subgroup {
+            margin-left: 210px;
+            margin-top: 5px;
+        }
+    </style>
+    <script>
+        function showMessage() {
+            alert("✅ Вашу анкету прийнято!\nДякуємо за заповнення!");
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>📋 ДЕТАЛЬНА АНКЕТА КОРИСТУВАЧА</h2>
+        <form onsubmit="showMessage(); return false;">
+            
+            <div class="form-group">
+                <label> Пароль:</label>
+                <input type="password" name="password" size="20" maxlength="20" placeholder="Введіть пароль">
+            </div>
+
+            <div class="form-group">
+                <label> Прізвище:</label>
+                <input type="text" name="surname" size="30" maxlength="40" placeholder="Введіть прізвище">
+            </div>
+
+            <div class="form-group">
+                <label>Ім'я:</label>
+                <input type="text" name="name" size="30" maxlength="40" placeholder="Введіть ім'я">
+            </div>
+
+            <div class="form-group">
+                <label> По батькові:</label>
+                <input type="text" name="patronymic" size="30" maxlength="40" placeholder="Введіть по батькові">
+            </div>
+
+            <div class="form-group">
+                <label> Держава проживання:</label>
+                <select name="country">
+                    <option value="ukraine">Україна</option>
+                    <option value="poland">Польща</option>
+                    <option value="germany">Німеччина</option>
+                    <option value="usa">США</option>
+                    <option value="uk">Велика Британія</option>
+                    <option value="france">Франція</option>
+                    <option value="italy">Італія</option>
+                    <option value="spain">Іспанія</option>
+                    <option value="canada">Канада</option>
+                    <option value="other">Інша</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Поштовий індекс:</label>
+                <input type="text" name="postal_code" size="10" maxlength="10" placeholder="XXXXX">
+            </div>
+
+            <div class="form-group">
+                <label> Місце проживання:</label>
+                <div class="radio-group">
+                    <input type="radio" name="residence" value="kyiv" checked> Київ
+                    <input type="radio" name="residence" value="kharkiv"> Харків
+                    <input type="radio" name="residence" value="odesa"> Одеса
+                    <input type="radio" name="residence" value="dnipro"> Дніпро
+                    <input type="radio" name="residence" value="lviv"> Львів
+                    <input type="radio" name="residence" value="zaporizhzhia"> Запоріжжя
+                    <input type="radio" name="residence" value="vinnytsia"> Вінниця
+                    <input type="radio" name="residence" value="poltava"> Полтава
+                    <input type="radio" name="residence" value="chernihiv"> Чернігів
+                    <input type="radio" name="residence" value="other"> Інше
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Вулиця:</label>
+                <input type="text" name="street" size="40" maxlength="60" placeholder="Введіть назву вулиці">
+            </div>
+
+            <div class="form-group">
+                <label> Будинок:</label>
+                <input type="text" name="house" size="10" maxlength="10" placeholder="№ будинку">
+            </div>
+
+            <div class="form-group">
+                <label>Електронна адреса:</label>
+                <input type="email" name="email" size="35" maxlength="50" placeholder="example@mail.com">
+            </div>
+
+            <div class="form-group">
+                <label> Ваші захоплення:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="hobbies" value="sport"> Спорт
+                    <input type="checkbox" name="hobbies" value="music"> Музика
+                    <input type="checkbox" name="hobbies" value="reading"> Читання
+                    <input type="checkbox" name="hobbies" value="travel"> Подорожі
+                    <input type="checkbox" name="hobbies" value="photography"> Фотографія
+                    <input type="checkbox" name="hobbies" value="cooking"> Кулінарія
+                    <input type="checkbox" name="hobbies" value="gaming"> Ігри
+                    <input type="checkbox" name="hobbies" value="drawing"> Малювання
+                    <input type="checkbox" name="hobbies" value="dancing"> Танці
+                    <input type="checkbox" name="hobbies" value="cinema"> Кіно
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label> Мови, якими володієте:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="languages" value="ukrainian" checked> Українська
+                    <input type="checkbox" name="languages" value="english"> Англійська
+                    <input type="checkbox" name="languages" value="french"> Французька
+                    <input type="checkbox" name="languages" value="polish"> Польська
+                    <input type="checkbox" name="languages" value="german"> Німецька
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label> Ваші побажання:</label><br>
+                <textarea name="wishes" rows="5" cols="55" placeholder="Напишіть ваші побажання, пропозиції, коментарі..."></textarea>
+            </div>
+            
+            <hr>
+
+            <div class="buttons">
+                <input type="submit" value="✅ Відправити анкету">
+                <input type="reset" value="🗑️ Очистити форму">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

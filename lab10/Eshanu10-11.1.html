@@ -1,0 +1,152 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Реєстрація на онлайн-курс</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+        h2 {
+            color: #667eea;
+            text-align: center;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .form-group {
+            margin: 15px 0;
+        }
+        label {
+            display: inline-block;
+            width: 180px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        .radio-group, .checkbox-group {
+            display: inline-block;
+        }
+        .radio-group label, .checkbox-group label {
+            width: auto;
+            font-weight: normal;
+            margin-right: 15px;
+        }
+        .buttons {
+            margin-top: 25px;
+            text-align: center;
+        }
+        .buttons input {
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+        }
+        input[type="submit"] {
+            background: #667eea;
+            color: white;
+        }
+        input[type="reset"] {
+            background: #e74c3c;
+            color: white;
+        }
+        input[type="button"] {
+            background: #3498db;
+            color: white;
+        }
+        hr {
+            margin: 20px 0;
+        }
+    </style>
+    <script>
+        function showMessage() {
+            alert("✅ Ваша форма прийнята до обробки. Дякуємо за увагу!");
+        }
+        function showHint() {
+            alert("💡 Підказка: Заповніть всі поля форми перед відправленням!");
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>📚 Реєстрація на онлайн-курс "Web-розробка"</h2>
+        <form onsubmit="showMessage(); return false;">
+
+            <div class="form-group">
+                <label>Ваше ім'я:</label>
+                <input type="text" name="name" size="40" maxlength="50" placeholder="Введіть ПІБ">
+            </div>
+
+            <div class="form-group">
+                <label>Пароль:</label>
+                <input type="password" name="password" size="20" maxlength="20" placeholder="Введіть пароль">
+            </div>
+
+            <div class="form-group">
+                <label>Ваша стать:</label>
+                <div class="radio-group">
+                    <input type="radio" name="gender" value="male" checked> Чоловіча
+                    <input type="radio" name="gender" value="female"> Жіноча
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Ваш вік:</label>
+                <select name="age">
+                    <option value="18-25">18-25 років</option>
+                    <option value="26-35">26-35 років</option>
+                    <option value="36-45">36-45 років</option>
+                    <option value="46+">46+ років</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label> Які теми цікавлять:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="topics" value="html" checked> HTML/CSS
+                    <input type="checkbox" name="topics" value="js"> JavaScript
+                    <input type="checkbox" name="topics" value="react"> React
+                    <input type="checkbox" name="topics" value="python"> Python
+                </div>
+            </div>
+ 
+            <div class="form-group">
+                <label>Про себе:</label><br>
+                <textarea name="about" rows="5" cols="55" placeholder="Розкажіть трохи про себе, ваш досвід програмування..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Прикріпити резюме:</label>
+                <input type="file" name="resume" size="40" accept=".pdf,.doc,.docx">
+            </div>
+
+            <div class="form-group">
+                <label>Додатково:</label>
+                <input type="button" value="Показати підказку" onclick="showHint()">
+            </div>
+            
+            <hr>
+
+            <div class="buttons">
+                <input type="submit" value="✅ Відправити дані">
+                <input type="reset" value="🗑️ Очистити форму">
+            </div>
+            
+        </form>
+    </div>
+</body>
+</html>

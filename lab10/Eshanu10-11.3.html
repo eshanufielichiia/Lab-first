@@ -1,0 +1,147 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Замовлення товару</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            padding: 40px;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+        h2 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .form-group {
+            margin: 18px 0;
+        }
+        label {
+            display: inline-block;
+            width: 220px;
+            font-weight: bold;
+        }
+        .inline-label {
+            width: auto;
+            font-weight: normal;
+        }
+        input, select, textarea {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 220px;
+        }
+        .radio-group, .checkbox-group {
+            display: inline-block;
+        }
+        .radio-group label, .checkbox-group label {
+            width: auto;
+            font-weight: normal;
+            margin-right: 20px;
+        }
+        .buttons {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .buttons input {
+            padding: 12px 25px;
+            margin: 0 15px;
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+        }
+        input[type="submit"] {
+            background: #2c3e50;
+            color: white;
+        }
+        input[type="reset"] {
+            background: #e74c3c;
+            color: white;
+        }
+        hr {
+            margin: 20px 0;
+        }
+        .note {
+            font-size: 12px;
+            color: #999;
+            margin-left: 225px;
+        }
+    </style>
+    <script>
+        function showMessage() {
+            alert("✅ Ваше замовлення прийняте до обробки!\nДякуємо за покупку!");
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>🛒 ОФОРМЛЕННЯ ЗАМОВЛЕННЯ</h2>
+        <form onsubmit="showMessage(); return false;">
+
+            <div class="form-group">
+                <label>Номер банківського рахунку:</label>
+                <input type="text" name="bank_account" size="30" maxlength="34" placeholder="XXXX XXXX XXXX XXXX">
+            </div>
+
+            <div class="form-group">
+                <label>Особистий номер (ІПН):</label>
+                <input type="text" name="personal_id" size="20" maxlength="12" placeholder="XXXXXXXXXXXX">
+            </div>
+
+            <div class="form-group">
+                <label>Виберіть товари:</label>
+                <select name="products" size="6" multiple style="width: 260px;">
+                    <option value="laptop"> Ноутбук Acer — 15 000 грн</option>
+                    <option value="phone"> Смартфон Samsung — 12 000 грн</option>
+                    <option value="tablet">Планшет iPad — 18 000 грн</option>
+                    <option value="headphones"> Навушники Sony — 2 500 грн</option>
+                    <option value="mouse">Мишка Logitech — 800 грн</option>
+                    <option value="keyboard"> Клавіатура Mechanical — 2 000 грн</option>
+                </select>
+                <div class="note">(Для вибору кількох товарів затисніть Ctrl)</div>
+            </div>
+
+            <div class="form-group">
+                <label>Спосіб оплати:</label>
+                <div class="radio-group">
+                    <input type="radio" name="payment" value="cash" checked> Готівковий
+                    <input type="radio" name="payment" value="cashless"> Безготівковий
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Додаткова інформація:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="info_balance" value="balance"> Дані про залишки на рахунку
+                    <input type="checkbox" name="info_payments" value="payments"> Список останніх виплат по рахунку
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Коментар до замовлення:</label><br>
+                <textarea name="comment" rows="5" cols="55" placeholder="Ваші побажання, особливі вимоги, додаткова інформація..."></textarea>
+            </div>
+            
+            <hr>
+
+            <div class="buttons">
+                <input type="submit" value="✅ Оформити замовлення">
+                <input type="reset" value="🗑️ Очистити форму">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

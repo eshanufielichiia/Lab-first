@@ -1,0 +1,174 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Анкета користувача бібліотеки</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #8E2DE2 0%, #4A00E0 100%);
+            padding: 40px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+        h2 {
+            color: #8E2DE2;
+            text-align: center;
+            border-bottom: 3px solid #4A00E0;
+            padding-bottom: 10px;
+        }
+        .form-group {
+            margin: 18px 0;
+        }
+        label {
+            display: inline-block;
+            width: 200px;
+            font-weight: bold;
+        }
+        .inline-label {
+            width: auto;
+            font-weight: normal;
+        }
+        input, select, textarea {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 250px;
+        }
+        .radio-group, .checkbox-group {
+            display: inline-block;
+        }
+        .radio-group label, .checkbox-group label {
+            width: auto;
+            font-weight: normal;
+            margin-right: 20px;
+        }
+        .buttons {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .buttons input {
+            padding: 12px 25px;
+            margin: 0 15px;
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+        }
+        input[type="submit"] {
+            background: #8E2DE2;
+            color: white;
+        }
+        input[type="reset"] {
+            background: #e74c3c;
+            color: white;
+        }
+        hr {
+            margin: 20px 0;
+        }
+        .note {
+            font-size: 12px;
+            color: #999;
+            margin-left: 205px;
+        }
+        select[multiple] {
+            width: 280px;
+            height: 120px;
+        }
+    </style>
+    <script>
+        function showMessage() {
+            alert("✅ Вашу анкету прийнято!\nДякуємо за реєстрацію в бібліотеці!");
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>📚 АНКЕТА КОРИСТУВАЧА ВІРТУАЛЬНОЇ БІБЛІОТЕКИ</h2>
+        <form onsubmit="showMessage(); return false;">
+
+            <div class="form-group">
+                <label>Прізвище:</label>
+                <input type="text" name="surname" size="30" maxlength="40" placeholder="Введіть прізвище">
+            </div>
+
+            <div class="form-group">
+                <label>Ім'я:</label>
+                <input type="text" name="name" size="30" maxlength="40" placeholder="Введіть ім'я">
+            </div>
+
+            <div class="form-group">
+                <label>Пароль:</label>
+                <input type="password" name="password" size="20" maxlength="20" placeholder="Введіть пароль">
+            </div>
+
+            <div class="form-group">
+                <label> Стать:</label>
+                <div class="radio-group">
+                    <input type="radio" name="gender" value="male" checked> Чоловіча
+                    <input type="radio" name="gender" value="female"> Жіноча
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Чим займаєтеся:</label>
+                <div class="radio-group">
+                    <input type="radio" name="occupation" value="student" checked> Студент
+                    <input type="radio" name="occupation" value="teacher"> Викладач
+                    <input type="radio" name="occupation" value="engineer"> Інженер
+                    <input type="radio" name="occupation" value="doctor"> Лікар
+                    <input type="radio" name="occupation" value="other"> Інше
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Ваш вік:</label>
+                <div class="radio-group">
+                    <input type="radio" name="age" value="under18"> до 18 років
+                    <input type="radio" name="age" value="18-25" checked> 18-25 років
+                    <input type="radio" name="age" value="26-35"> 26-35 років
+                    <input type="radio" name="age" value="36-50"> 36-50 років
+                    <input type="radio" name="age" value="over50"> понад 50 років
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Тематика книг:</label>
+                <select name="topics" multiple size="6">
+                    <option value="fiction">Художня література</option>
+                    <option value="detective">Детективи</option>
+                    <option value="fantasy">Фентезі</option>
+                    <option value="sci-fi">Наукова фантастика</option>
+                    <option value="romance">Романтика</option>
+                    <option value="history">Історія</option>
+                    <option value="science">Наука та техніка</option>
+                    <option value="psychology">Психологія</option>
+                    <option value="business">Бізнес та економіка</option>
+                    <option value="art">Мистецтво</option>
+                </select>
+                <div class="note">(Для вибору кількох тем затисніть Ctrl)</div>
+            </div>
+
+            <div class="form-group">
+                <label>Що зараз читаєте:</label><br>
+                <textarea name="current_reading" rows="4" cols="55" placeholder="Назвіть книгу, яку ви зараз читаєте, або останню прочитану книгу..."></textarea>
+            </div>
+            
+            <hr>
+
+            <div class="buttons">
+                <input type="submit" value="✅ Зареєструватися">
+                <input type="reset" value="🗑️ Очистити форму">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
