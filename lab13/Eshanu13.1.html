@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinemaWorld - Gulp + SCSS</title>
+    <link rel="stylesheet" href="dist/css/style.min.css">
+</head>
+<body>
+    <!-- Нова навігація -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">🎬</span>
+                <span class="logo-text">Cinema<span class="highlight">World</span></span>
+            </a>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- Горизонтальне меню (ненумерований список) -->
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="#home" class="nav-link active">Головна</a></li>
+                <li class="nav-item"><a href="#disney" class="nav-link">Disney</a></li>
+                <li class="nav-item"><a href="#pixar" class="nav-link">Pixar</a></li>
+                <li class="nav-item"><a href="#dreamworks" class="nav-link">DreamWorks</a></li>
+                <li class="nav-item"><a href="#ghibli" class="nav-link">Ghibli</a></li>
+            </ul>
+            
+            <div class="nav-search">
+                <input type="text" placeholder="Пошук мультфільмів...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero секція -->
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-badge">✨ Ласкаво просимо</div>
+                <h1 class="hero-title">Світ <span class="gradient-text">мультфільмів</span></h1>
+                <p class="hero-description">
+                    <a href="#disney">Відкрийте для себе магію анімації</a> — найкращі мультфільми всіх часів у одному місці
+                </p>
+                <div class="hero-buttons">
+                    <a href="#disney" class="btn btn-primary">Дивитись зараз →</a>
+                    <a href="#popular" class="btn btn-secondary">Трейлери</a>
+                </div>
+            </div>
+            <div class="hero-scroll">
+                <span>Гортайте вниз</span>
+                <div class="scroll-mouse"></div>
+            </div>
+        </section>
+
+        <!-- Категорії -->
+        <section class="categories">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Категорії</span>
+                    <h2 class="section-title">Оберіть свою <span class="gradient-text">історію</span></h2>
+                </div>
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <div class="category-icon">🏰</div>
+                        <h3><a href="#disney">Disney</a></h3>
+                        <p>Класичні казки та чарівні пригоди</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🤖</div>
+                        <h3><a href="#pixar">Pixar</a></h3>
+                        <p>Емоційні історії та сучасна анімація</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🐉</div>
+                        <h3><a href="#dreamworks">DreamWorks</a></h3>
+                        <p>Гумор, пригоди та яскраві персонажі</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🍃</div>
+                        <h3><a href="#ghibli">Studio Ghibli</a></h3>
+                        <p>Японська анімація та філософські сюжети</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Disney секція -->
+        <section id="disney" class="movies-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Disney</span>
+                    <h2 class="section-title">Чарівні <span class="gradient-text">казки</span></h2>
+                    <p class="section-subtitle"><a href="#disney">Переглянути всі мультфільми Disney →</a></p>
+                </div>
+                <div class="movies-slider">
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="dist/images/movie1.jpg" alt="Король Лев">
+                            <div class="movie-overlay">
+                                <a href="#" class="play-btn">▶</a>
+                            </div>
+                        </div>
+                        <div class="movie-info">
+                            <h3 class="movie-title"><a href="#">Король Лев</a></h3>
+                            <div class="movie-meta">
+                                <span>⭐ 8.5</span>
+                                <span>🎬 1994</span>
+                            </div>
+                            <p class="movie-description">
+                                <a href="#">Велична історія про Сімбу, який має стати справжнім королем.</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="dist/images/movie2.jpg" alt="Крижане серце">
+                            <div class="movie-overlay">
+                                <a href="#" class="play-btn">▶</a>
+                            </div>
+                        </div>
+                        <div class="movie-info">
+                            <h3 class="movie-title"><a href="#">Крижане серце</a></h3>
+                            <div class="movie-meta">
+                                <span>⭐ 7.9</span>
+                                <span>🎬 2013</span>
+                            </div>
+                            <p class="movie-description">
+                                <a href="#">Неймовірна подорож Ельзи та Анни до чарівного Еренделу.</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="dist/images/movie3.jpg" alt="Аладдін">
+                            <div class="movie-overlay">
+                                <a href="#" class="play-btn">▶</a>
+                            </div>
+                        </div>
+                        <div class="movie-info">
+                            <h3 class="movie-title"><a href="#">Аладдін</a></h3>
+                            <div class="movie-meta">
+                                <span>⭐ 8.1</span>
+                                <span>🎬 1992</span>
+                            </div>
+                            <p class="movie-description">
+                                <a href="#">Чарівна історія про джина, принцесу та справжнє кохання.</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pixar секція -->
+        <section id="pixar" class="movies-section alt-bg">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Pixar</span>
+                    <h2 class="section-title">Емоції та <span class="gradient-text">пригоди</span></h2>
+                </div>
+                <div class="movies-grid">
+                    <div class="movie-card horizontal">
+                        <div class="movie-poster small">
+                            <img src="dist/images/movie1.jpg" alt="Історія іграшок">
+                        </div>
+                        <div class="movie-info">
+                            <h3 class="movie-title"><a href="#">Історія іграшок</a></h3>
+                            <p class="movie-description">
+                                <a href="#">Вуді та Базз Райтер вирушають у неймовірну пригоду.</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="movie-card horizontal">
+                        <div class="movie-poster small">
+                            <img src="dist/images/movie2.jpg" alt="Угору">
+                        </div>
+                        <div class="movie-info">
+                            <h3 class="movie-title"><a href="#">Угору</a></h3>
+                            <p class="movie-description">
+                                <a href="#">Карл Фредрікен вирушає у подорож на будинку з кульками.</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="movie-card horizontal">
+                        <div class="movie-poster small">
+                            <img src="dist/images/movie3.jpg" alt="Таємниця Коко">
+                        </div>
+                        <div class="movie-info">
+                            <h3 class="movie-title"><a href="#">Таємниця Коко</a></h3>
+                            <p class="movie-description">
+                                <a href="#">Мігель потрапляє у світ мертвих, щоб розкрити таємницю родини.</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA секція -->
+        <section class="cta">
+            <div class="cta-content">
+                <h2>Готові до <span class="gradient-text">пригод?</span></h2>
+                <p><a href="#disney">Почніть перегляд найкращих мультфільмів просто зараз</a></p>
+                <a href="#" class="btn btn-primary">Дивитись →</a>
+            </div>
+        </section>
+
+        <!-- DreamWorks секція -->
+        <section id="dreamworks" class="movies-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">DreamWorks</span>
+                    <h2 class="section-title">Гумор та <span class="gradient-text">дракони</span></h2>
+                </div>
+                <div class="movies-grid">
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="dist/images/movie1.jpg" alt="Шрек">
+                        </div>
+                        <div class="movie-info">
+                            <h3 class="movie-title"><a href="#">Шрек</a></h3>
+                            <p class="movie-description">
+                                <a href="#">Зелений огр рятує принцесу Фіону від дракона.</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <div class="movie-poster">
+                            <img src="dist/images/movie2.jpg" alt="Мадагаскар">
+                        </div>
+                        <div class="movie-info">
+                            <h3 class="movie-title"><a href="#">Мадагаскар</a></h3>
+                            <p class="movie-description">
+                                <a href="#">Тварини з зоопарку вирушають у подорож Африкою.</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-icon">🎬</span>
+                <span>Cinema<span class="highlight">World</span></span>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#home">Головна</a></li>
+                <li><a href="#disney">Мультфільми</a></li>
+                <li><a href="#">Новини</a></li>
+                <li><a href="#">Контакти</a></li>
+            </ul>
+            <div class="footer-social">
+                <a href="#">📘</a>
+                <a href="#">📷</a>
+                <a href="#">🐦</a>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2024 CinemaWorld. Всі права захищено. <a href="#">Політика конфіденційності</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="dist/js/main.min.js"></script>
+</body>
+</html>
