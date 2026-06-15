@@ -1,0 +1,94 @@
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Картирування геометричних фігур</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            margin: 20px;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        .container {
+            background-color: white;
+            display: inline-block;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        .info {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #eef;
+            border-radius: 10px;
+            display: inline-block;
+            text-align: left;
+        }
+        a {
+            text-decoration: none;
+            color: #2980b9;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>📐 Завдання 2: Навігаційна карта з геометричними фігурами</h2>
+    <div class="container">
+        <!-- 
+            Використовуємо зображення, створене через SVG, 
+            щоб не залежати від зовнішніх файлів.
+            На ньому зображені: прямокутник (червоний), коло (синє), трикутник (зелений).
+        -->
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='400' viewBox='0 0 500 400'%3E%3Crect x='30' y='30' width='180' height='130' fill='%23FF5733' stroke='black' stroke-width='2'/%3E%3Ctext x='70' y='100' fill='white' font-size='18' font-weight='bold'%3EПрямокутник%3C/text%3E%3Ccircle cx='370' cy='100' r='60' fill='%2333A2FF' stroke='black' stroke-width='2'/%3E%3Ctext x='340' y='110' fill='white' font-size='18' font-weight='bold'%3EКоло%3C/text%3E%3Cpolygon points='250,300 150,380 350,380' fill='%2333CC33' stroke='black' stroke-width='2'/%3E%3Ctext x='220' y='360' fill='white' font-size='18' font-weight='bold'%3EТрикутник%3C/text%3E%3C/svg%3E"
+             width="500"
+             height="400"
+             border="2"
+             usemap="#shapeMap"
+             alt="Геометричні фігури (прямокутник, коло, трикутник)"
+             style="border: 2px solid #333; border-radius: 8px;">
+
+        <map name="shapeMap">
+          
+            <area shape="rect"
+                  coords="30,30,210,160"
+                  href="https://uk.wikipedia.org/wiki/Прямокутник"
+                  title="Прямокутник – чотирикутник з прямими кутами"
+                  alt="Прямокутник"
+                  target="_blank">
+
+       
+            <area shape="circle"
+                  coords="370,100,60"
+                  href="https://uk.wikipedia.org/wiki/Коло"
+                  title="Коло – геометричне місце точок, рівновіддалених від центра"
+                  alt="Коло"
+                  target="_blank">
+
+
+            <area shape="poly"
+                  coords="250,300,150,380,350,380"
+                  href="https://uk.wikipedia.org/wiki/Трикутник"
+                  title="Трикутник – фігура з трьома сторонами та трьома кутами"
+                  alt="Трикутник"
+                  target="_blank">
+        </map>
+    </div>
+
+    <div class="info">
+        <h3> Як це працює:</h3>
+        <ul>
+            <li><strong>Прямокутник</strong> (червоний) – натисніть на нього → стаття про прямокутник</li>
+            <li><strong>Коло</strong> (синє) – натисніть на нього → стаття про коло</li>
+            <li><strong>Трикутник</strong> (зелений) – натисніть на нього → стаття про трикутник</li>
+            <li><strong>Підказка</strong> з'являється при наведенні миші (атрибут <code>title</code>)</li>
+       
+    </div>
+
+</body>
+</html>

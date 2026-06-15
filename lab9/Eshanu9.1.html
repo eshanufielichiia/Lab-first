@@ -1,0 +1,171 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Моя Батьківщина - Молдова</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #003399 0%, #FFD700 100%);
+            padding: 30px;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                90deg,
+                #003399 0px,
+                #003399 33.33%,
+                #FFD700 33.33%,
+                #FFD700 66.66%,
+                #CC0000 66.66%,
+                #CC0000 100%
+            );
+            opacity: 0.15;
+            z-index: -1;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+        h1 {
+            text-align: center;
+            color: #003399;
+            border-bottom: 3px solid #CC0000;
+            padding-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #555;
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+        .flag {
+            text-align: center;
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+        }
+        .card {
+            width: 300px;
+            background: #f9f9f9;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            border: 2px solid #CC0000;
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card h3 {
+            margin: 15px;
+            color: #003399;
+        }
+        .card p {
+            margin: 0 15px 15px 15px;
+            color: #555;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        .info {
+            background: #f0f0f0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+            border-left: 5px solid #CC0000;
+            border-right: 5px solid #003399;
+        }
+        .info p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .highlight {
+            color: #003399;
+            font-weight: bold;
+        }
+        @media (max-width: 700px) {
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flag">🇲🇩</div>
+        <h1>Моя Батьківщина — Молдова</h1>
+        <div class="subtitle">Країна з багатою історією, чудовими краєвидами та гостинними людьми 🏞️</div>
+        
+        <div class="gallery">
+            <div class="card" title="Кишинів — столиця Молдови, місто-сад">
+                <img src="Кишинів.jpg" alt="Кишинів">
+                <h3>Кишинів</h3>
+                <p>Столиця Молдови, розташована в центрі країни. Відома як "місто-сад" завдяки численним паркам та алеям. Тут знаходяться Палац Республіки, Тріумфальна арка та Собор Різдва Христового.</p>
+            </div>
+            
+            <div class="card" title="Стара Орхей — унікальний історичний комплекс">
+                <img src="Стара Орхей.jpg" alt="Стара Орхей">
+                <h3>Стара Орхей</h3>
+                <p>Історико-археологічний комплекс на березі річки Реут. Тут розташовані печерні монастирі, залишки давніх фортець та мальовничі краєвиди. Це одне з найпопулярніших туристичних місць Молдови.</p>
+            </div>
+            
+            <div class="card" title="Кепріанський монастир — духовний центр Молдови">
+                <img src="Монастир Кепріана.jpg" alt="Монастир Кепріана">
+                <h3>Кепріанський монастир</h3>
+                <p>Один із найстаріших монастирів Молдови, заснований у XV столітті. Є важливим духовним та культурним центром країни. Розташований серед мальовничого лісу.</p>
+            </div>
+            
+            <div class="card" title="Сорокська фортеця — ідеальне коло">
+                <img src="Сорокська фортеця.jpg" alt="Сорокська фортеця">
+                <h3>Сорокська фортеця</h3>
+                <p>Унікальна фортеця у формі ідеального кола, збудована у XV столітті. Розташована на березі Дністра. Добре збереглася до наших днів і є символом міста Сороки.</p>
+            </div>
+            
+            <div class="card" title="Пейзажі Старої Орхей — природна перлина Молдови">
+                <img src="Природа Орхею.jpg" alt="Пейзажі Орхей">
+                <h3>Природа Орхею</h3>
+                <p>Мальовничі краєвиди Старої Орхей вражають своєю красою. Скелясті береги річки Реут, зелені пагорби та історичні пам'ятки створюють неповторну атмосферу.</p>
+            </div>
+            
+            <div class="card" title="Бендерська фортеця — пам'ятка військової архітектури">
+                <img src="Бендерська фортеця.jpg" alt="Бендерська фортеця">
+                <h3>Бендерська фортеця</h3>
+                <p>Фортеця, збудована у XVI столітті на березі Дністра. Добре збережена, вражає своєю міццю та архітектурою. Важлива історична пам'ятка Молдови.</p>
+            </div>
+        </div>
+        
+        <div class="info">
+            <p><strong>Цікаві факти про Молдову:</strong> </p>
+            <p>Соняшник є одним із символів країни — Молдова є великим виробником соняшникової олії.</p>
+            <p>Молдова має одну з найбільших колекцій народних костюмів у Європі.</p>
+            <p>Щороку в Молдові проходить фестиваль національної культури "Limba Noastră".</p>
+            <p>Кишинів вважається одним із найзеленіших міст Європи.</p>
+            <p>Молдовська народна музика та танець "Жок" відомі далеко за межами країни.</p>
+            <p class="highlight">🇲🇩 Ласкаво просимо до Молдови — країни з багатою культурою та гостинними людьми! 🇲🇩</p>
+        </div>
+    </div>
+</body>
+</html>

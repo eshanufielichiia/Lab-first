@@ -1,0 +1,57 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Використання сенсорних зображень</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+        }
+        h2 {
+            color: #1e3c72;
+        }
+        img {
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Сенсорне зображення — Водоспад із собакою</h2>
+        
+        <map name="map2">
+            <area shape="rect" coords="0,0,400,60" title=" Небо" alt="Небо">
+            
+            <area shape="rect" coords="0,60,400,180" title="Дім" alt="Дім">
+            
+            <area shape="circle" coords="200,250,30" title="Трава" alt="Трава">
+            
+            <area shape="rect" coords="0,300,400,350" title="Собака" alt="Собака">
+            
+            <area shape="rect" coords="0,180,100,300" title="Квіти" alt="Квіти">
+            <area shape="rect" coords="300,180,400,300" title="Трава" alt="Трава">
+        </map>
+        
+        <img src="Фото.jpg" width="400" height="350" border="1" usemap="#map2">
+        
+        <div style="margin-top: 15px; text-align: left; background: #f0f0f0; padding: 10px; border-radius: 10px;">
+            <p> <strong>Області на зображенні:</strong></p>
+            <p> <strong>Верх</strong> — Небо</p>
+            <p> <strong>Центр</strong> — Ніс собаки</p>
+            <p> <strong>Нижня центральна частина</strong> — Собака</p>
+            <p> <strong>Самий низ збоку </strong> — Трава</p>
+            <p> <strong>Верх зліва</strong> — Дім</p>
+        </div>
+    </div>
+</body>
+</html>
