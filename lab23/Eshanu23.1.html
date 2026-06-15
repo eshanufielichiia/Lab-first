@@ -1,0 +1,97 @@
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Мова та день тижня</title>
+</head>
+<body>
+    <h1>Завдання 1: Вибір мови та дня тижня</h1>
+    <p>(Відкриється діалогове вікно)</p>
+
+    <script>
+        const langData = {
+            ua: {
+                question: "Введіть номер дня тижня від 1 до 7?",
+                errorRange: "Помилка! Введіть число від 1 до 7.",
+                days: [
+                    "Неділя",
+                    "Понеділок",
+                    "Вівторок",
+                    "Середа",
+                    "Четвер",
+                    "П'ятниця",
+                    "Субота"
+                ]
+            },
+            en: {
+                question: "Enter the day number of the week (from 1 to 7)?",
+                errorRange: "Error! Enter a number from 1 to 7.",
+                days: [
+                    "Sunday",
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                ]
+            }
+        };
+
+        let selectedLanguage = null;
+        let dayNumber = null;
+
+        function askLanguage() {
+            while (true) {
+                let langInput = prompt("Виберіть мову \"ua\" або \"en\"?");
+
+                if (langInput === null) {
+                    alert("Вибір скасовано. Спробуйте ще раз.");
+                    continue;
+                }
+
+                let normalizedLang = langInput.trim().toLowerCase();
+
+                if (normalizedLang === "ua" || normalizedLang === "en") {
+                    selectedLanguage = normalizedLang;
+                    break;
+                } else {
+                    alert("Неправильний ввід даних. Введіть \"ua\" або \"en\".");
+                }
+            }
+        }
+
+        function askDayNumber() {
+            const currentLangData = langData[selectedLanguage];
+
+            while (true) {
+                let dayInput = prompt(currentLangData.question);
+
+                if (dayInput === null) {
+                    alert("Вибір скасовано. Спробуйте ще раз.");
+                    continue;
+                }
+
+                let number = Number(dayInput);
+
+                if (isNaN(number)) {
+                    alert(currentLangData.errorRange);
+                    continue;
+                }
+
+                if (number >= 1 && number <= 7) {
+                    dayNumber = number;
+                    break;
+                } else {
+                    alert(currentLangData.errorRange);
+                }
+            }
+        }
+
+        askLanguage();
+        askDayNumber();
+
+        const resultDay = langData[selectedLanguage].days[dayNumber - 1];
+        alert(`Результат: ${resultDay}`);
+    </script>
+</body>
+</html>
