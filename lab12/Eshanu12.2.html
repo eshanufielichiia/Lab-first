@@ -1,0 +1,248 @@
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git команди - довідник</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Courier New', monospace;
+            background: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: #161b22;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 3px solid #f0883e;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            color: #f0883e;
+        }
+
+        .header h1 span {
+            color: #58a6ff;
+        }
+
+        .header p {
+            margin-top: 10px;
+            color: #8b949e;
+        }
+
+        .nav {
+            background: #161b22;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .nav button {
+            background: #21262d;
+            color: #c9d1d9;
+            border: none;
+            padding: 8px 20px;
+            margin: 0 5px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .nav button:hover {
+            background: #f0883e;
+            color: #0d1117;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section {
+            background: #161b22;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 1px solid #30363d;
+            overflow: hidden;
+        }
+
+        .section-title {
+            background: #21262d;
+            padding: 15px 25px;
+            font-size: 24px;
+            font-weight: bold;
+            border-bottom: 2px solid #f0883e;
+            color: #f0883e;
+        }
+
+        .commands-list {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 15px;
+        }
+
+        .command-item {
+            background: #0d1117;
+            border-radius: 10px;
+            padding: 15px;
+            border-left: 3px solid #f0883e;
+        }
+
+        .command-code {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: #58a6ff;
+            background: #010409;
+            padding: 8px 12px;
+            border-radius: 6px;
+            overflow-x: auto;
+            word-break: break-all;
+        }
+
+        .command-desc {
+            margin-top: 8px;
+            font-size: 13px;
+            color: #8b949e;
+        }
+
+        .footer {
+            background: #161b22;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+            border-top: 1px solid #30363d;
+        }
+
+        .footer button {
+            background: none;
+            border: none;
+            color: #f0883e;
+            cursor: pointer;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+
+        .footer button:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 900px) {
+            .commands-list {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Git <span>Command Line</span> Reference</h1>
+        <p>Повний довідник команд Git для ефективної роботи</p>
+    </div>
+
+    <div class="nav">
+        <button onclick="goTo('Eshanu12.1.html')">📝 Реєстрація</button>
+        <button onclick="goTo('Eshanu12.2.html')" style="background: #f0883e; color: #0d1117;">💻 Git Commands</button>
+    </div>
+
+    <div class="container">
+
+        <div class="section">
+            <div class="section-title">Create a Repository</div>
+            <div class="commands-list">
+                <div class="command-item"><div class="command-code">$ git init [project name]</div><div class="command-desc">Створити новий локальний репозиторій</div></div>
+                <div class="command-item"><div class="command-code">$ git clone my_url</div><div class="command-desc">Скачати існуючий репозиторій</div></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Show Changes (Перегляд змін)</div>
+            <div class="commands-list">
+                <div class="command-item"><div class="command-code">$ git status</div><div class="command-desc">Список нових або змінених файлів</div></div>
+                <div class="command-item"><div class="command-code">$ git diff</div><div class="command-desc">Зміни в файлах, які ще не в stage</div></div>
+                <div class="command-item"><div class="command-code">$ git diff --cached</div><div class="command-desc">Зміни в staged файлах</div></div>
+                <div class="command-item"><div class="command-code">$ git diff HEAD</div><div class="command-desc">Всі зміни (staged + unstaged)</div></div>
+                <div class="command-item"><div class="command-code">$ git diff commit1 commit2</div><div class="command-desc">Різниця між двома комітами</div></div>
+                <div class="command-item"><div class="command-code">$ git blame [file]</div><div class="command-desc">Хто і коли змінював файл</div></div>
+                <div class="command-item"><div class="command-code">$ git show [commit]:[file]</div><div class="command-desc">Зміни для коміту/файлу</div></div>
+                <div class="command-item"><div class="command-code">$ git log</div><div class="command-desc">Повна історія змін</div></div>
+                <div class="command-item"><div class="command-code">$ git log -p [file/directory]</div><div class="command-desc">Історія змін з деталями</div></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Working with Branches (Робота з гілками)</div>
+            <div class="commands-list">
+                <div class="command-item"><div class="command-code">$ git branch</div><div class="command-desc">Список локальних гілок</div></div>
+                <div class="command-item"><div class="command-code">$ git branch -a</div><div class="command-desc">Всі гілки (локальні + віддалені)</div></div>
+                <div class="command-item"><div class="command-code">$ git checkout my_branch</div><div class="command-desc">Перейти на гілку</div></div>
+                <div class="command-item"><div class="command-code">$ git branch new_branch</div><div class="command-desc">Створити нову гілку</div></div>
+                <div class="command-item"><div class="command-code">$ git branch -d my_branch</div><div class="command-desc">Видалити гілку</div></div>
+                <div class="command-item"><div class="command-code">$ git checkout branch_b<br>$ git merge branch_a</div><div class="command-desc">Злити гілку branch_a у branch_b</div></div>
+                <div class="command-item"><div class="command-code">$ git tag my_tag</div><div class="command-desc">Позначити коміт тегом</div></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Make a Change (Внесення змін)</div>
+            <div class="commands-list">
+                <div class="command-item"><div class="command-code">$ git add [file]</div><div class="command-desc">Додати файл до stage</div></div>
+                <div class="command-item"><div class="command-code">$ git add .</div><div class="command-desc">Додати всі змінені файли до stage</div></div>
+                <div class="command-item"><div class="command-code">$ git commit -m "commit message"</div><div class="command-desc">Зробити коміт</div></div>
+                <div class="command-item"><div class="command-code">$ git reset [file]</div><div class="command-desc">Прибрати файл з stage (зміни залишаються)</div></div>
+                <div class="command-item"><div class="command-code">$ git reset --hard</div><div class="command-desc">Повернутися до останнього коміту</div></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Synchronize (Синхронізація)</div>
+            <div class="commands-list">
+                <div class="command-item"><div class="command-code">$ git fetch</div><div class="command-desc">Отримати зміни з origin (без злиття)</div></div>
+                <div class="command-item"><div class="command-code">$ git pull</div><div class="command-desc">Fetch + merge</div></div>
+                <div class="command-item"><div class="command-code">$ git pull --rebase</div><div class="command-desc">Fetch + rebase</div></div>
+                <div class="command-item"><div class="command-code">$ git push</div><div class="command-desc">Відправити зміни на сервер</div></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Finally! (Довідка)</div>
+            <div class="commands-list">
+                <div class="command-item"><div class="command-code">$ git command --help</div><div class="command-desc">When in doubt, use git help</div></div>
+                <div class="command-item"><div class="command-code">🔗 https://training.github.com/</div><div class="command-desc">Офіційний GitHub Training</div></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <button onclick="goTo('Eshanu12.1.html')">📝 Реєстрація</button>
+        <button onclick="goTo('Eshanu12.2.html')">💻 Git Commands</button>
+        <p style="margin-top: 15px;">© 2026 Git Command Reference | Лабораторна робота №12.2</p>
+    </div>
+
+    <script>
+        function goTo(page) {
+            if (page === 'git_commands.html') {
+                location.reload();
+            } else {
+                location.href = page;
+            }
+        }
+    </script>
+
+</body>
+</html>

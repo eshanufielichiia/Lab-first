@@ -1,0 +1,149 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Група 101 | Хмара студентів</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cloud {
+            background: white;
+            border-radius: 60px;
+            padding: 50px 40px;
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .cloud::-webkit-scrollbar {
+            width: 8px;
+        }
+        .cloud::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        .cloud::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 32px;
+            position: sticky;
+            top: 0;
+            background: white;
+            padding-bottom: 10px;
+            z-index: 10;
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 10px 22px;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: all 0.2s;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .tag:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .cloud {
+                padding: 30px 20px;
+                border-radius: 30px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            .tag {
+                font-size: 14px !important;
+                padding: 6px 15px;
+            }
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #999;
+            position: sticky;
+            bottom: 0;
+            background: white;
+        }
+
+        .footer strong {
+            color: #667eea;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cloud">
+        <h1>📚 Група 101-ТК</h1>
+        
+        <div class="tags-container">
+            <!-- Студенти -->
+            <span class="tag" style="background:#FF6B6B; color:white; font-size:18px;">01 Андрощук Віктор Віталійович</span>
+            <span class="tag" style="background:#FF8C94; color:white; font-size:17px;">02 Андрущенко Аліна Андріївна 👩</span>
+            <span class="tag" style="background:#4ECDC4; color:white; font-size:17px;">03 Бабанський Ілля Русланович</span>
+            <span class="tag" style="background:#45B7D1; color:white; font-size:17px;">04 Бокань Роман Русланович</span>
+            <span class="tag" style="background:#52c48f; color:white; font-size:17px;">05 Виноградський Андрій Юрійович</span>
+            <span class="tag" style="background:#dab94d; color:#333; font-size:17px;">06 Віскрівець Дмитро Олександрович</span>
+            <span class="tag" style="background:#e063e0; color:white; font-size:17px;">07 Галанський Єгор Антонович</span>
+            <span class="tag" style="background:#64cfb5; color:white; font-size:17px;">08 Євсєєв Владислав Вячеславович</span>
+            <span class="tag" style="background:#cc8854; color:white; font-size:17px;">09 Єшану Фєлічія 👩</span>
+            <span class="tag" style="background:#5cd9ab; color:#333; font-size:17px;">10 Коваленко Богдан Вікторович</span>
+            <span class="tag" style="background:#556abb; color:#333; font-size:17px;">11 Колотій Ян Сергійович</span>
+            <span class="tag" style="background:#da6c64; color:#333; font-size:17px;">12 Комліченко Владислав Вікторович</span>
+            <span class="tag" style="background:#b35f83; color:white; font-size:17px;">13 Кривоніс Діана Миколаївна 👩</span>
+            <span class="tag" style="background:#46b58c; color:#333; font-size:17px;">14 Ладіков Максим Юрійович</span>
+            <span class="tag" style="background:#9b7054; color:#333; font-size:17px;">15 Марусиченко Олександр Олександрович</span>
+            <span class="tag" style="background:#b66d69; color:#333; font-size:17px;">16 Пальчик Владислав Богданович</span>
+            <span class="tag" style="background:#44a291; color:#333; font-size:17px;">17 Петренко Назар Михайлович</span>
+            <span class="tag" style="background:#b54dc0; color:#333; font-size:17px;">18 Полтавець Артем Олександрович</span>
+            <span class="tag" style="background:#9c4861; color:#333; font-size:17px;">19 Смаглюк Євгеній Вікторович</span>
+            <span class="tag" style="background:#2c6372; color:#333; font-size:17px;">20 Ткач Євгеній Вячеславович</span>
+            <span class="tag" style="background:#a7692c; color:#333; font-size:17px;">21 Шаповалов Дмитро Валентинович</span>
+            <span class="tag" style="background:#4addc0; color:#333; font-size:17px;">22 Шульга Олександр Сергійович</span>
+            <span class="tag" style="background:#b6295f; color:#333; font-size:17px;">23 Юрченко Артем Борисович</span>
+            <span class="tag" style="background:#4072a1; color:#333; font-size:17px;">24 Якушенко Нестір Сергійович</span>
+        </div>
+
+        <div class="footer">
+            <p>🎓 Всього студентів: <strong>24</strong></p>
+            <p style="font-size: 12px; margin-top: 10px;"> Група 101-ТК | Лабораторна робота №12.3</p>
+        </div>
+    </div>
+</body>
+</html>
