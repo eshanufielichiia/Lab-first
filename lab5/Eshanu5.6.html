@@ -1,0 +1,304 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Журнальна сторінка</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Georgia', 'Times New Roman', serif;
+            padding: 40px;
+        }
+
+        .magazine {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .magazine-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-bottom: 5px solid #e94560;
+        }
+        
+        .magazine-header h1 {
+            font-size: 48px;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+        
+        .magazine-header p {
+            font-size: 14px;
+            color: #aaa;
+            margin-top: 10px;
+        }
+
+        .magazine-content {
+            padding: 30px;
+        }
+
+        .feature-article {
+            margin-bottom: 40px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 30px;
+        }
+        
+        .feature-article h2 {
+            font-size: 32px;
+            color: #1a1a2e;
+            margin-bottom: 15px;
+            border-left: 5px solid #e94560;
+            padding-left: 15px;
+        }
+        
+        .feature-article .meta {
+            color: #888;
+            font-size: 12px;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .feature-article p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .columns {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .column {
+            flex: 1;
+        }
+        
+        .column h3 {
+            font-size: 22px;
+            color: #e94560;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e94560;
+            display: inline-block;
+        }
+        
+        .column p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #555;
+            text-align: justify;
+            margin-top: 15px;
+        }
+        
+        .column img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        
+        .data-table {
+            margin: 30px 0;
+            background: #f9f9f9;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .data-table h3 {
+            background: #1a1a2e;
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: #e94560;
+            color: white;
+            font-weight: bold;
+        }
+        
+        td {
+            background-color: white;
+        }
+
+        .quote {
+            background: linear-gradient(135deg, #f5f0ff 0%, #e8e0ff 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 18px;
+            color: #333;
+            border-left: 5px solid #e94560;
+        }
+        
+        .quote-author {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #e94560;
+            font-weight: bold;
+        }
+
+        .magazine-footer {
+            background: #1a1a2e;
+            color: #aaa;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .sidebar {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .sidebar h4 {
+            color: #e94560;
+            margin-bottom: 15px;
+        }
+        
+        .sidebar ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .sidebar li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        @media (max-width: 768px) {
+            .columns {
+                flex-direction: column;
+            }
+            .magazine-header h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="magazine">
+        <div class="magazine-header">
+            <h1>ТЕХНОЛОГІЧНИЙ ОГЛЯД</h1>
+            <p>Щомісячний журнал | Випуск №12 | Травень 2026</p>
+        </div>
+        
+        <div class="magazine-content">
+            <div class="feature-article">
+                <h2>Штучний інтелект: Нова ера цифрової трансформації</h2>
+                <div class="meta">Автор: Олександр Коваленко | 5 хвилин читання</div>
+                <p>Штучний інтелект (ШІ) став невід'ємною частиною нашого повсякденного життя. Від голосових помічників до автономних автомобілів — технології ШІ розвиваються з неймовірною швидкістю. За даними дослідницької компанії Gartner, до 2027 року понад 75% підприємств будуть використовувати ШІ у своїх бізнес-процесах. Це відкриває нові можливості для оптимізації виробництва, підвищення ефективності та створення інноваційних продуктів.</p>
+                <p>Одним із найбільш перспективних напрямків є генеративний ШІ, здатний створювати текст, зображення, музику та навіть програмний код. Такі моделі, як GPT-4 та Midjourney, демонструють вражаючі результати, що змінюють уявлення про творчість та автоматизацію.</p>
+            </div>
+            
+            <div class="columns">
+                <div class="column">
+                    <h3>Кібербезпека</h3>
+                    <img src="https://picsum.photos/id/0/400/200" alt="Кібербезпека" style="width:100%; border-radius:10px;">
+                    <p>Загрози кібербезпеки стають дедалі витонченішими. Експерти радять використовувати багатофакторну автентифікацію та регулярно оновлювати програмне забезпечення. Кіберзлочинність завдає щорічних збитків на $6 трильйонів.</p>
+                </div>
+                <div class="column">
+                    <h3>Хмарні технології</h3>
+                    <img src="https://picsum.photos/id/20/400/200" alt="Хмара" style="width:100%; border-radius:10px;">
+                    <p>Хмарні обчислення змінюють підходи до зберігання та обробки даних. AWS, Azure та Google Cloud пропонують масштабовані рішення для бізнесу будь-якого розміру. Прогнозується зростання ринку до $1.2 трлн до 2028 року.</p>
+                </div>
+                <div class="column">
+                    <h3>Інтернет речей</h3>
+                    <img src="https://picsum.photos/id/15/400/200" alt="IoT" style="width:100%; border-radius:10px;">
+                    <p>IoT пристрої підключають мільярди гаджетів до мережі — від розумних годинників до промислових датчиків. Очікується, що до 2030 року кількість підключених пристроїв перевищить 50 мільярдів.</p>
+                </div>
+            </div>
+
+            <div class="data-table">
+                <h3>📊 Топ-5 найбільш затребуваних IT-спеціальностей у 2026 році</h3>
+                <table>
+                    <tr>
+                        <th>№</th>
+                        <th>Спеціальність</th>
+                        <th>Середня зарплата ($)</th>
+                        <th>Попит (вакансій)</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>AI/ML Інженер</td>
+                        <td>$8,500</td>
+                        <td>12,500</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Розробник на Python</td>
+                        <td>$6,200</td>
+                        <td>18,300</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>DevOps Інженер</td>
+                        <td>$7,100</td>
+                        <td>9,800</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Data Scientist</td>
+                        <td>$7,800</td>
+                        <td>11,200</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Кібербезпеколог</td>
+                        <td>$6,800</td>
+                        <td>8,500</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="sidebar">
+                <h4>📌 Цікаві факти</h4>
+                <ul>
+                    <li>🔹 Перший комп'ютер важив понад 27 тонн</li>
+                    <li>🔹 Близько 90% всіх даних у світі створені за останні 2 роки</li>
+                    <li>🔹 Швидкість інтернету у Південній Кореї в 5 разів вища, ніж у середньому по світу</li>
+                    <li>🔹 Перший веб-сайт досі доступний за адресою info.cern.ch</li>
+                    <li>🔹 Щосекунди в інтернеті з'являється близько 500 годин відео на YouTube</li>
+                </ul>
+            </div>
+
+            <div class="quote">
+                "Технології — це лише інструмент. Головне — це люди, їхні ідеї та прагнення зробити світ кращим."
+                <div class="quote-author">— Стів Джобс, співзасновник Apple</div>
+            </div>
+        </div>
+
+        <div class="magazine-footer">
+            <p>© 2026 Технологічний огляд. Всі права захищені. Передрук матеріалів дозволено лише з письмового дозволу редакції.</p>
+            <p>Контакти: tech_review@magazine.com | +38 (044) 123-45-67</p>
+        </div>
+    </div>
+</body>
+</html>

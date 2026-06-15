@@ -1,0 +1,73 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 3 - Таблиця з об'єднаннями</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        table {
+            margin: 50px auto;
+            border: 2px solid #08a6a8;
+            background-color: #fff;
+            width: 80%;
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid #08a6a8;
+            padding: 15px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .obednano-row {
+            background-color: #ebceb0;
+            font-weight: bold;
+        }
+        .obednano-col {
+            background-color: #99ccff;
+            font-weight: bold;
+        }
+        .obednano-both {
+            background-color: #99ff99;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td colspan="3" class="obednano-row">Об'єднання 3 комірок по горизонталі</td>
+            <td>1,4</td>
+            <td>1,5</td>
+        </tr>
+        <tr>
+            <td rowspan="3" class="obednano-col" style="vertical-align: middle;">
+                Об'єднання<br>3 комірок<br>по вертикалі
+            </td>
+            <td>2,2</td>
+            <td>2,3</td>
+            <td>2,4</td>
+            <td>2,5</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="obednano-both">Об'єднано 2 комірки</td>
+            <td>3,4</td>
+            <td>3,5</td>
+        </tr>
+        <tr>
+            <td>4,2</td>
+            <td>4,3</td>
+            <td>4,4</td>
+            <td>4,5</td>
+        </tr>
+        <tr>
+            <td colspan="4" class="obednano-row">Об'єднання 4 комірок внизу</td>
+            <td>5,5</td>
+        </tr>
+    </table>
+
+</body>
+</html>
