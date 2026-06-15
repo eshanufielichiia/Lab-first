@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Горизонтальні рядки, що біжать</title>
+    <meta name="Description" content="Сторінка з горизонтальними рядками, що біжать">
+    <meta name="Keywords" content="marquee, рядок що біжить, горизонтальний, html">
+</head>
+<body bgcolor="#FFF0F5" text="#8B5A5B">
+
+    <h1 align="center">Горизонтальні рядки, що біжать</h1>
+
+    <!-- 1. Текст коливається з боку в бік -->
+    <p align="center">
+        <font face="Arial" size="4"><b>1. Коливання з боку в бік:</b></font><br>
+        <marquee width="80%" bgcolor="#FFB6C1" height="50" behavior="alternate">
+            <font color="#8B008B" face="Verdana" size="4"><b><i> Вітаю на моїй сторінці! </i></b></font>
+        </marquee>
+    </p>
+
+    <br>
+
+    <!-- 2. Текст пробігає справа наліво та з'являється знову -->
+    <p align="center">
+        <font face="Arial" size="4"><b>2. Справа наліво (нескінченно):</b></font><br>
+        <marquee width="80%" bgcolor="#ADD8E6" height="50" direction="left" behavior="scroll" loop="-1">
+            <font color="#00008B" face="Verdana" size="4"><b><i> Я вивчаю HTML та створюю свої перші сторінки! </i></b></font>
+        </marquee>
+    </p>
+
+    <br>
+
+    <!-- 3. Текст пробігає зліва направо та зупиняється -->
+    <p align="center">
+        <font face="Arial" size="4"><b>3. Зліва направо (зупиняється в кінці):</b></font><br>
+        <marquee width="80%" bgcolor="#C9E4DE" height="50" direction="right" behavior="slide">
+            <font color="#2E8B57" face="Verdana" size="4"><b><i> Моє хобі - хендмейд! </i></b></font>
+        </marquee>
+    </p>
+
+    <br>
+
+    <!-- 4. Різні режими запізнення (повільний) -->
+    <p align="center">
+        <font face="Arial" size="4"><b>4. Повільний рух (scrolldelay=500):</b></font><br>
+        <marquee width="80%" bgcolor="#FFDAB9" height="50" direction="left" behavior="scroll" scrolldelay="500">
+            <font color="#CD853F" face="Verdana" size="4"><b><i> Черепашача швидкість... повільно, але впевнено </i></b></font>
+        </marquee>
+    </p>
+
+    <br>
+
+    <!-- 5. Різні режими запізнення (швидкий) -->
+    <p align="center">
+        <font face="Arial" size="4"><b>5. Швидкий рух (scrollamount=20):</b></font><br>
+        <marquee width="80%" bgcolor="#E6E6FA" height="50" direction="left" behavior="scroll" scrollamount="2000">
+            <font color="#4B0082" face="Verdana" size="4"><b><i> Дуже швидкий рядок! Не пропустіть! </i></b></font>
+        </marquee>
+    </p>
+
+    <br><br>
+
+    <p align="right">
+        <i><font color="#8B5A5B">Студентка групи 101-ТК Єшану Ф.</font></i>
+    </p>
+
+</body>
+</html>
