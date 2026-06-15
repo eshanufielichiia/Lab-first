@@ -1,0 +1,248 @@
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX - Квадрат числа</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #eee;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(10px);
+            border-radius: 32px;
+            padding: 2rem 2rem 2.5rem;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.25rem;
+            letter-spacing: 1px;
+        }
+
+        .sub {
+            color: #bbd9ff;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        input {
+            width: 80%;
+            padding: 14px 20px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 60px;
+            outline: none;
+            text-align: center;
+            background-color: #f0f4fa;
+            color: #1e2a38;
+            font-weight: bold;
+            transition: 0.2s;
+            margin-bottom: 1rem;
+        }
+
+        input:focus {
+            transform: scale(1.02);
+            box-shadow: 0 0 0 3px #4c9aff;
+        }
+
+        button {
+            background: #ff7e5e;
+            background: linear-gradient(135deg, #ff7e5e, #feb47b);
+            border: none;
+            padding: 12px 28px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 40px;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 8px;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.05);
+            box-shadow: 0 10px 18px rgba(0, 0, 0, 0.3);
+        }
+
+        button:active {
+            transform: translateY(2px);
+        }
+
+        .result-card {
+            margin-top: 2rem;
+            background: #1e2f3c;
+            border-radius: 28px;
+            padding: 1rem;
+            transition: 0.2s;
+            border-left: 6px solid #ffa559;
+        }
+
+        .result-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 300;
+            color: #ffcd94;
+        }
+
+        .result-value {
+            font-size: 2.2rem;
+            font-weight: 800;
+            word-break: break-word;
+            color: #ffd966;
+            margin-top: 8px;
+        }
+
+        .error {
+            color: #ffaea3;
+            background: #4a1e1e80;
+            border-left-color: #ff5e4a;
+        }
+
+        .loader {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 0.6s linear infinite;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        footer {
+            font-size: 0.7rem;
+            margin-top: 2rem;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📐 Квадрат числа</h1>
+    <div class="sub">AJAX — односторінковий додаток</div>
+
+    <input type="number" id="numberInput" placeholder="Введіть число, наприклад 7" autocomplete="off">
+    <br>
+    <button id="calcButton">🔢 Обчислити квадрат</button>
+
+    <div id="resultBlock" class="result-card" style="display: none;">
+        <div class="result-label">📌 Квадрат числа</div>
+        <div class="result-value" id="resultText">—</div>
+    </div>
+
+    <div id="errorBlock" class="result-card error" style="display: none;">
+        <div class="result-label">⚠️ ПОМИЛКА</div>
+        <div class="result-value" id="errorText" style="font-size: 1.2rem;">—</div>
+    </div>
+
+    <footer>технологія AJAX | front-end + back-end (імітація запиту)</footer>
+</div>
+
+<script>
+    const numberInput = document.getElementById('numberInput');
+    const calcButton = document.getElementById('calcButton');
+    const resultBlock = document.getElementById('resultBlock');
+    const resultText = document.getElementById('resultText');
+    const errorBlock = document.getElementById('errorBlock');
+    const errorText = document.getElementById('errorText');
+
+    function hideResultAndError() {
+        resultBlock.style.display = 'none';
+        errorBlock.style.display = 'none';
+    }
+
+    function setLoadingState(isLoading) {
+        if (isLoading) {
+            const originalText = calcButton.innerText;
+            calcButton.disabled = true;
+            calcButton.setAttribute('data-original', originalText);
+            calcButton.innerHTML = '⏳ Відправка... <span class="loader"></span>';
+        } else {
+            calcButton.disabled = false;
+            const original = calcButton.getAttribute('data-original') || '🔢 Обчислити квадрат';
+            calcButton.innerHTML = original;
+        }
+    }
+
+    function calculateSquareViaAJAX(numberValue) {
+        hideResultAndError();
+
+        if (numberValue === '' || isNaN(numberValue)) {
+            errorText.innerText = 'Будь ласка, введіть коректне число.';
+            errorBlock.style.display = 'block';
+            return;
+        }
+
+        const num = parseFloat(numberValue);
+
+        
+        setLoadingState(true);
+        
+        
+        setTimeout(() => {
+            const randomError = Math.random() < 0.05; 
+            
+            setLoadingState(false);
+            
+            if (randomError) {
+                errorText.innerText = 'Серверна помилка: не вдалося обчислити квадрат. (тестовий збій)';
+                errorBlock.style.display = 'block';
+            } else {
+                const square = num * num;
+                let formattedResult;
+                if (Number.isInteger(square)) {
+                    formattedResult = square.toString();
+                } else {
+                    formattedResult = square.toFixed(4);
+                }
+                resultText.innerText = formattedResult;
+                resultBlock.style.display = 'block';
+            }
+        }, 500); 
+    }
+
+    function onCalculateClick() {
+        const rawValue = numberInput.value.trim();
+        calculateSquareViaAJAX(rawValue);
+    }
+
+    numberInput.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            onCalculateClick();
+        }
+    });
+
+    calcButton.addEventListener('click', onCalculateClick);
+</script>
+
+</body>
+</html>
