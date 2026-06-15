@@ -1,0 +1,344 @@
+   {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+.film-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffcc; 
+}
+
+.film-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #ffa500;
+}
+
+.film-title {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.student-info {
+    font-size: 1em;
+    color: #666;
+    background: rgba(255, 255, 255, 0.7);
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+.poster-section {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.movie-poster {
+    width: 300px;
+    height: 400px;
+    border: 3px solid #00ff00;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.movie-poster:hover {
+    transform: scale(1.02);
+}
+
+.film-details {
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+
+.film-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.film-table tr {
+    border-bottom: 1px dashed #ccc;
+}
+
+.film-table td {
+    padding: 12px 8px;
+}
+
+.label {
+    font-weight: bold;
+    width: 180px;
+    color: #555;
+}
+
+.value {
+    color: #333;
+}
+
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin: 20px 0 30px 0;
+}
+
+.photo-item {
+    display: inline-block;
+}
+
+.photo-item img {
+    width: 320px;
+    height: 240px;
+    border: 3px solid #ffa500;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: all 0.3s;
+}
+
+.photo-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+h2 {
+    text-align: left;
+    font-size: 20px;
+    color: #555555;
+    margin: 30px 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ffa500;
+}
+
+.description p {
+    margin: 15px 0;
+    padding-left: 15px;
+    text-align: justify;
+}
+
+.author-info p {
+    margin: 15px 0;
+    padding-left: 15px;
+    text-align: justify;
+}
+
+.wiki-link {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.wiki-link:hover {
+    color: #ff6600;
+    text-decoration: underline;
+}
+
+.book-body {
+    background-color: #d3d3d3 !important; 
+}
+
+.book-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f0f0f0;
+}
+
+.book-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.student-name {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.section-title-right {
+    text-align: right;
+    text-decoration: underline;
+    font-size: 14px;
+    color: #008000;
+    margin: 25px 0 15px 0;
+    letter-spacing: 1px;
+}
+
+.images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin: 30px 0;
+}
+
+.image-card {
+    text-align: center;
+}
+
+.book-cover, .author-photo {
+    width: 300px;
+    height: 400px;
+    border: 2px solid #8b4513;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.book-cover:hover, .author-photo:hover {
+    transform: scale(1.02);
+}
+
+.image-caption {
+    margin-top: 10px;
+    font-style: italic;
+    color: #666;
+}
+
+.book-info-block {
+    margin: 20px 0;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+}
+
+.bold-label {
+    font-weight: bold;
+    color: #333;
+}
+
+.italic-link {
+    font-style: italic;
+}
+
+.italic-link a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.italic-link a:hover {
+    color: #ff6600;
+    text-decoration: none;
+}
+
+.divider-line {
+    border-bottom: 5px solid #0000ff;
+    margin: 25px 0;
+}
+
+.indent-paragraph p {
+    margin: 12px 0;
+    padding-left: 15px;
+    text-align: justify;
+}
+
+.contents-title {
+    text-transform: uppercase;
+    color: #ff0000;
+    text-align: center;
+    margin: 30px 0 20px 0;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+.contents-list {
+    margin: 20px 0 30px 0;
+    padding-left: 30px;
+}
+
+.chapter-item {
+    margin: 10px 0;
+}
+
+.chapter-link {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.chapter-link:hover {
+    color: #ff6600;
+    text-decoration: none;
+    padding-left: 5px;
+}
+
+.full-chapter {
+    margin: 30px 0;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.chapter-heading {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 20px;
+    border-left: 4px solid #ff6600;
+    padding-left: 15px;
+}
+
+.chapter-text p {
+    margin-bottom: 15px;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .film-container, .book-wrapper {
+        padding: 15px;
+    }
+    
+    .photo-gallery {
+        gap: 20px;
+    }
+    
+    .photo-item img {
+        width: 250px;
+        height: 188px;
+    }
+    
+    .book-cover, .author-photo {
+        width: 250px;
+        height: 333px;
+    }
+    
+    .film-table td {
+        display: block;
+        width: 100%;
+    }
+    
+    .label {
+        width: 100%;
+        padding-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-item img {
+        width: 280px;
+        height: 210px;
+    }
+    
+    .movie-poster {
+        width: 250px;
+        height: 333px;
+    }
+    
+    .contents-title {
+        font-size: 22px;
+    }
+}
