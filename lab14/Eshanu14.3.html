@@ -1,0 +1,301 @@
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Додаткове завдання | Bootstrap + анімації + JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --bg-body: #e9ecef;
+            --card-bg: #ffffff;
+            --text-color: #212529;
+            --block-bg: #f8f9fa;
+            --border-color: #dee2e6;
+            --navbar-bg: #f8f9fa;
+        }
+        body.dark-theme {
+            --bg-body: #1a1e24;
+            --card-bg: #2c3038;
+            --text-color: #f8f9fa;
+            --block-bg: #343a40;
+            --border-color: #495057;
+            --navbar-bg: #212529;
+        }
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            padding-top: 70px;
+        }
+        .custom-card {
+            border: 1px solid var(--border-color);
+            background-color: var(--block-bg);
+            border-radius: 20px;
+            padding: 1.25rem;
+            height: 100%;
+            min-height: 130px;
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .custom-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px -8px rgba(0,0,0,0.2);
+        }
+        .navbar {
+            background-color: var(--navbar-bg) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
+        }
+        .navbar-brand, .nav-link {
+            color: var(--text-color) !important;
+        }
+        .theme-toggle {
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1.3rem;
+            color: var(--text-color);
+        }
+        .highlight {
+            box-shadow: 0 0 0 3px #0d6efd, 0 0 0 6px rgba(13,110,253,0.3);
+            transition: box-shadow 0.2s;
+        }
+        .carousel-item img {
+            height: 300px;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+        .accordion-button {
+            background-color: var(--block-bg);
+            color: var(--text-color);
+        }
+        .accordion-body {
+            background-color: var(--block-bg);
+            color: var(--text-color);
+        }
+        footer {
+            background-color: var(--navbar-bg);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 767px) {
+            .custom-card {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <i class="fas fa-code"></i> WebLab Додаткове
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="#header">Шапка</a></li>
+                <li class="nav-item"><a class="nav-link" href="#menu">Меню</a></li>
+                <li class="nav-item"><a class="nav-link" href="#content">Контент</a></li>
+                <li class="nav-item"><a class="nav-link" href="#footer">Підвал</a></li>
+                <li class="nav-item"><a class="nav-link" href="#carousel">Карусель</a></li>
+            </ul>
+            <button class="theme-toggle" id="darkModeToggle">
+                <i class="fas fa-moon"></i> Тема
+            </button>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row g-4 mb-4" id="header">
+        <div class="col-12 col-md-6">
+            <div class="custom-card" data-block="header-left">
+                <i class="fas fa-bars fa-2x mb-2"></i>
+                <h4>Ліва частина шапки</h4>
+                <p>Логотип, бренд, слоган</p>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="custom-card" data-block="header-right">
+                <i class="fas fa-user-circle fa-2x mb-2"></i>
+                <h4>Права частина шапки</h4>
+                <p>Контакти, соцмережі</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 mb-4" id="menu">
+        <div class="col-12 col-md-3">
+            <div class="custom-card" data-block="menu-left">
+                <i class="fas fa-th-large fa-2x mb-2"></i>
+                <h5>Ліве меню</h5>
+                <p>Пункт 1<br>Пункт 2<br>Пункт 3</p>
+            </div>
+        </div>
+        <div class="col-12 col-md-6" id="content">
+            <div class="custom-card" data-block="content-main">
+                <i class="fas fa-newspaper fa-2x mb-2"></i>
+                <h5>Контент</h5>
+                <p>Основний вміст сторінки. Адаптивність, темна тема, Bootstrap JS компоненти.</p>
+                <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#infoModal">
+                    <i class="fas fa-info-circle"></i> Детальніше
+                </button>
+            </div>
+        </div>
+        <div class="col-12 col-md-3">
+            <div class="custom-card" data-block="menu-right">
+                <i class="fas fa-chalkboard-user fa-2x mb-2"></i>
+                <h5>Праве меню</h5>
+                <p>Акції<br>Новини<br>Чат</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 mb-4" id="footer">
+        <div class="col-12 col-md-6">
+            <div class="custom-card" data-block="footer-left">
+                <i class="fas fa-copyright fa-2x mb-2"></i>
+                <h4>Ліва частина підвала</h4>
+                <p>Всі права захищено 2025</p>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="custom-card" data-block="footer-right">
+                <i class="fab fa-twitter fa-2x mb-2"></i>
+                <h4>Права частина підвала</h4>
+                <p>Соціальні мережі</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="carouselExample" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://picsum.photos/id/1015/1200/400" class="d-block w-100" alt="Гори">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                    <h5>Адаптивний дизайн</h5>
+                    <p>Bootstrap робить верстку гнучкою</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://picsum.photos/id/104/1200/400" class="d-block w-100" alt="Озеро">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                    <h5>Темна тема</h5>
+                    <p>Перемикайте стилі одним кліком</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://picsum.photos/id/169/1200/400" class="d-block w-100" alt="Сонце">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                    <h5>JS компоненти</h5>
+                    <p>Модальні вікна, акордеон, карусель</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <div class="accordion mb-5" id="faqAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                    Як працює адаптивна сітка?
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Bootstrap використовує 12-колонкову систему. Класи <code>col-md-6</code> тощо змінюють поведінку на різних брейкпоінтах.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                    Як додати темну тему?
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Через CSS-змінні та перемикання класу <code>dark-theme</code> на body за допомогою JavaScript.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center">
+        <p><i class="fas fa-heart text-danger"></i> Додаткове завдання – динамічна підсвітка блоків при скролі + темна тема + Bootstrap JS</p>
+    </footer>
+</div>
+
+<div class="modal fade" id="infoModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Інформація про проєкт</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Це додаткове завдання демонструє:</p>
+                <ul>
+                    <li>Адаптивну сітку Bootstrap</li>
+                    <li>Темну тему (перемикач)</li>
+                    <li>Підсвітку активного блоку при скролі</li>
+                    <li>Карусель, акордеон, модальне вікно</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрити</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const toggleBtn = document.getElementById('darkModeToggle');
+    toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme');
+        const icon = toggleBtn.querySelector('i');
+        if (document.body.classList.contains('dark-theme')) {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        } else {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        }
+    });
+
+    const blocks = document.querySelectorAll('[data-block]');
+    function highlightVisibleBlock() {
+        let bestBlock = null;
+        let bestVisible = 0;
+        blocks.forEach(block => {
+            const rect = block.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            const visiblePart = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+            if (visiblePart > bestVisible && rect.top < windowHeight - 100) {
+                bestVisible = visiblePart;
+                bestBlock = block;
+            }
+        });
+        blocks.forEach(block => block.classList.remove('highlight'));
+        if (bestBlock) bestBlock.classList.add('highlight');
+    }
+    window.addEventListener('scroll', highlightVisibleBlock);
+    window.addEventListener('resize', highlightVisibleBlock);
+    highlightVisibleBlock(); 
+</script>
+</body>
+</html>
